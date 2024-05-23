@@ -1,0 +1,940 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+}
+
+body {
+    line-height: 20px;
+    font-family: Verdana, sans-serif;
+    color: #000000;
+    background-color: #ffffff;
+}
+
+/* ШАПКА */
+.navbar {
+    background-color: #000000;
+}
+
+.navbar-container {
+    margin: auto;
+    padding: 15px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+/* левая сторона */
+.navbar-left {
+    margin-bottom: 5px;
+    height: 85px;
+    color: #ffffff;
+}
+
+.navbar-nav {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    list-style: none;
+}
+
+.navbar-logo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: #ffffff;
+    text-decoration: none;
+    margin-right: 20px;
+}
+
+.navbar-logo .nav-logo {
+    width: 50px;
+    margin: 20px;
+}
+
+/* меню навигации */
+.nav-menu {
+    margin-left: 30px;
+    margin-top: 10px;
+}
+
+.nav-item .nav-link {
+    color: #ffffff !important;
+    text-transform: uppercase;
+}
+
+.nav-item .nav-link .nav-link-name {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    padding: 4px;
+}
+
+.nav-item .nav-link .nav-link-name:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #7534d6;
+    transform: translate3d(-100%, 0, 0) translate3d(-1px, 0, 0);
+    transition: transform 0.7s;
+    transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+}
+
+.nav-item .nav-link:hover .nav-link-name::before {
+    transform: translate3d(100%, 0, 0) translate3d(1px, 0, 0);
+}
+
+/* правая сторона */
+.navbar-right {
+    margin-right: 50px;
+    margin-top: 10px;
+}
+
+/* контакты */
+.navbar-items {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    list-style: none;
+    align-items: center;
+}
+
+.navbar-items .nav-item .nav-link {
+    margin-right: 40px;
+}
+
+.navbar-item .navbar-button {
+    width: 20px;
+    height: 20px;
+    padding: 10px;
+    margin: 0 10px;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    background-color: #fff;
+    border-radius: 50px;
+}
+
+.navbar-icon {
+    text-align: center;
+}
+
+.navbar-icon img {
+    width: 20px;
+}
+
+/* бургер-меню */
+.burger-menu {
+    position: fixed;
+    right: 20px;
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.burger-menu span {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 4px 0;
+}
+
+/* боковая панель-меню */
+.sidebar-menu {
+    position: fixed;
+    top: 0;
+    left: -400px;
+    width: 400px;
+    height: 100%;
+    background-color: #131314;
+    transition: left 0.3s ease;
+    z-index: 1;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sidebar-menu.active {
+    left: 0;
+    z-index: 2;
+}
+
+.sidebar-nav-menu {
+    flex-direction: column;
+}
+
+.sidebar-navbar-nav {
+    list-style: none;
+    font-size: 24px;
+    text-align: center;
+}
+
+.sidebar-navbar-nav span {
+    margin: 15px;
+}
+
+.sidebar-navbar-items {
+    margin-top: 80px;
+    list-style: none;
+    display: flex;
+}
+
+
+/* ГЛАВНАЯ */
+main {
+    background: linear-gradient(180deg, rgb(80, 71, 148)0%, rgb(80, 71, 148)20%, rgb(28, 23, 53)100%);
+    height: 100%;
+}
+
+.main-container {
+    background-color: #18161670;
+    width: 100%;
+    height: 100%;
+}
+
+.content {
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 45px;
+}
+
+.profile {
+    background-color: #000000;
+    width: 750px;
+    padding: 30px;
+    border-radius: 15px;
+}
+
+.text-content {
+    text-align: center;
+    color: #fff;
+    padding-bottom: 40px;
+    font-size: 45px;
+}
+
+.text-profile {
+    font-family: 'Courier New', Courier, monospace;
+    color: #fff;
+    text-align: center;
+    margin: 15px;
+}
+
+.account-content {
+    display: flex;
+}
+
+.user-photo img {
+    background-color: #fff;
+    border-radius: 85%;
+    padding: 10px;
+    margin-right: 30px;
+}
+
+.user-btn {
+    margin-top: 10px;
+}
+
+.share {
+    margin: 4px;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: #ebebeb;
+}
+
+.share:hover {
+    background-color: #d8d8d8;
+}
+
+.share img {
+    text-align: center;
+    width: 25px;
+    height: 25px;
+}
+
+.account-info {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.account-info h1 {
+    margin-bottom: 15px;
+}
+
+.buttons-account {
+    display: flex;
+}
+
+.account-edit {
+    margin-top: 10px;
+    margin-right: 20px;
+    width: 180px;
+    display: block;
+    padding: 10px;
+    background-color: #7534d6;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.account-edit:hover {
+    background-color: #642cb9;
+    transform: translateY(-1px);
+}
+
+.account-message {
+    margin-top: 10px;
+    width: 180px;
+    display: block;
+    padding: 10px;
+    background-color:#ffffff;
+    color: #000000;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.account-message:hover {
+    background-color: #ececec;
+    transform: translateY(-1px);
+}
+
+.text-topic {
+    font-size: 50px;
+    line-height: 50px;
+    color: #ffffff;
+    font-family: 'Courier New', Courier, monospace;
+    margin: 30px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.text-topic:hover {
+    color: #dfdbdf;
+}
+
+/* релизы */
+.content-releases {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.release {
+    margin: 20px;
+    text-align: center;
+    color: #fff;
+}
+
+.release img {
+    max-width: 150px;
+    border-radius: 15px;
+}
+
+.release p {
+    font-size: 10px;
+}
+
+.name-release {
+    margin: 5px;
+    font-size: 12px;
+}
+
+.btn-pr {
+    margin-top: 5px;
+    height: 20px;
+    width: 20px;
+    text-align: center;
+    border-radius: 50%;
+    padding: 0;
+    background: #8837FF;
+    transition: all 0.3s ease-in-out;
+    border: none;
+    cursor: pointer;
+}
+
+.cooperation-form {
+    width: 600px;
+    margin: 0 auto;
+    padding: 0 20px;
+    border-radius: 5px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+.title {
+    font-size: 30px;
+    margin: 30px;
+    text-align: center;
+}
+
+.form-group p {
+    text-align: center;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ffffff;
+    border-radius: 4px;
+}
+
+/* кнопка для скролла */
+#scrollBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    background-color: transparent;
+    border: none;
+    z-index: 1;
+    outline: none;
+    cursor: pointer;
+}
+
+/* ПОДВАЛ */
+.footer-container {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    color: #ffffff;
+    background-color: #000000;
+}
+
+.footer-content {
+    max-width: 1040px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.logo-container img {
+    width: 40px;
+    margin-right: 10px;
+}
+
+.logo-container p {
+    font-size: 16px;
+}
+
+.copyrights {
+    color: #888888;
+    font-size: 14px;
+    text-align: center;
+}
+
+/* АДАПТИВ МЕДИА-ЗАПРОСЫ */
+/* АДАПТИВ МЕДИА-ЗАПРОСЫ */
+/* АДАПТИВ МЕДИА-ЗАПРОСЫ */
+
+/* ДЕСКТОПы */
+@media screen and (max-width: 1200px) {
+    body {
+        font-size: 95%;
+    }
+
+    .navbar-container {
+        padding-bottom: 15px;
+    }
+
+    .navbar-left {
+        margin-bottom: 5px;
+    }
+
+    .navbar-logo {
+        margin-right: 20px;
+    }
+
+    .nav-menu {
+        margin-left: 0;
+    }
+
+    .navbar-nav {
+        gap: 8px;
+    }
+
+    .navbar-right {
+        margin-top: 10px;
+    }
+
+    .navbar-items .nav-item .nav-link {
+        margin-right: 20px;
+    }
+
+}
+
+@media screen and (max-width: 1020px) {
+    body {
+        size: 70%;
+    }
+
+    .navbar-container {
+        padding-bottom: 15px;
+    }
+
+    .navbar-logo {
+        margin-right: 20px;
+    }
+
+    .nav-menu {
+        margin-left: 0;
+    }
+
+    .navbar-items .nav-item .nav-link {
+        margin-right: 20px;
+    }
+
+    .navbar-item .navbar-button {
+        margin-bottom: 10px;
+        width: 15px;
+        height: 15px;
+    }
+
+    .navbar-icon img {
+        width: 16px;
+        height: 16px;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    #scrollBtn {
+        width: 50px;
+        height: 50px;
+    }
+
+    #scrollBtn img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .navbar-container {
+        font-size: 90%;
+    }
+
+}
+
+@media screen and (max-width: 940px) {
+    .navbar-container {
+        font-size: 80%;
+    }
+}
+
+/* АДАПТИВ С БУРГЕРОМ */
+@media screen and (max-width: 890px) {
+    body {
+        font-size: 95%;
+    }
+
+    .navbar-container {
+        padding-bottom: 15px;
+    }
+
+    .navbar-logo {
+        margin-right: 20px;
+    }
+
+    .nav-menu {
+        display: none;
+    }
+
+    .navbar-items {
+        display: none;
+    }
+
+    .navbar-items .nav-item .nav-link {
+        margin-right: 20px;
+    }
+
+    .navbar-item .navbar-button {
+        margin-bottom: 10px;
+        width: 15px;
+        height: 15px;
+    }
+
+    .navbar-icon img {
+        width: 16px;
+        height: 16px;
+    }
+
+    .burger-menu {
+        display: flex;
+    }
+
+    .sidebar-menu {
+        display: flex;
+    }
+
+    main {
+        height: 100%;
+    }
+
+    .content {
+        flex-direction: column;
+    }
+
+    .profile {
+        margin: 20px;
+        width: 650px;
+    }
+
+    .text-content {
+        font-size: 40px;
+        padding-bottom: 20px;
+    }
+
+    .text-profile {
+        margin: 8px;
+        font-size: 99%;
+    }
+
+    .text-topic {
+        font-size: 38px;
+    }
+    
+    .account-info h1 {
+        font-size: 24px;
+    }
+
+    .account-info p {
+        font-size: 14px;
+    }
+
+    .cooperation-form {
+        font-size: 90%;
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+    .navbar-container {
+        padding: 5px;
+    }
+
+    .navbar-logo {
+        margin-right: 5px;
+    }
+
+    .navbar-items {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .navbar-items .nav-item .nav-link {
+        margin-right: 10px;
+        margin-bottom: 10px;
+    }
+
+    .profile {
+        width: 500px;
+        padding: 15px;
+    }
+
+    .text-content {
+        font-size: 35px;
+    }
+
+    .text-topic {
+        font-size: 34px;
+    }
+    
+    .account-info h1 {
+        font-size: 22px;
+        margin-bottom: 8px;
+    }
+
+    .account-info p {
+        font-size: 14px;
+    }
+
+    .account-edit, .account-message {
+        width: 130px;
+        font-size: 14px;
+    }
+    .release img {
+        width: 100px;
+    }
+
+    .name-release {
+        margin: 0px;
+        font-size: 10px;
+    }
+
+    .btn-pr img {
+        width: 15px;
+    }
+
+    .cooperation-form {
+        font-size: 85%;
+        width: 400px;
+    }
+
+    .title {
+        font-size: 22px;
+        margin: 10px;
+    }
+
+    .form-group p {
+        font-size: 11px;
+    }
+
+    .form-group label {
+        margin-bottom: 0px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        padding: 5px;
+        margin: 5px 0;
+    }
+}
+
+@media screen and (max-width: 590px) {
+    .navbar-container {
+        font-size: 65%;
+    }
+
+    .navbar-logo .nav-logo {
+        width: 40px;
+    }
+
+    .navbar-container {
+        padding: 0px;
+    }
+
+    .burger-menu span {
+        width: 20px;
+        height: 2px;
+        margin: 3px 0;
+    }
+
+    #scrollBtn {
+        width: 45px;
+        height: 45px;
+    }
+
+    #scrollBtn img {
+        width: 45px;
+        height: 45px;
+    }
+
+    .profile {
+        width: 420px;
+    }
+    
+    .text-content {
+        font-size: 30px;
+    }
+
+    .text-topic {
+        font-size: 28px;
+    }
+    
+    .account-info h1 {
+        font-size: 20px;
+    }
+
+    .account-info p {
+        font-size: 12px;
+    }
+
+    .account-edit, .account-message {
+        width: 110px;
+        font-size: 12px;
+    }
+
+    .content-releases {
+        flex-direction: column;
+    }
+
+    .release {
+        margin: 5px;
+    }
+
+    .release img {
+        width: 150px;
+    }
+
+    .btn-pr img {
+        width: 15px;
+    }
+
+    .cooperation-form {
+        width: 350px;
+    }
+
+    .title {
+        font-size: 20px;
+    }
+
+}
+
+@media screen and (max-width: 480px) {
+    .navbar-container {
+        font-size: 62%;
+    }
+
+    .navbar-logo .nav-logo {
+        width: 37px;
+    }
+
+    .profile {
+        width: 350px;
+    }
+    
+    .text-content {
+        font-size: 28px;
+    }
+
+    .user-photo img {
+        width: 60px;
+        margin-right: 10px;
+    }
+
+    .share {
+        width: 30px;
+        height: 30px;
+    }
+
+    .share img {
+        width: 15px;
+        height: 15px;
+    }
+
+    .text-topic {
+        font-size: 24px;
+    }
+    
+    .account-info h1 {
+        font-size: 18px;
+    }
+
+    .account-info p {
+        font-size: 12px;
+    }
+
+    .account-edit, .account-message {
+        width: 90px;
+        font-size: 10px;
+    }
+
+    .cooperation-form {
+        width: 300px;
+    }
+
+    .title {
+        font-size: 18px;
+    }
+    
+}
+
+@media screen and (max-width: 440px) {
+    .main-left .text-main {
+        margin: 10px;
+    }
+
+    #scrollBtn {
+        width: 40px;
+        height: 40px;
+        right: 20px;
+    }
+
+    #scrollBtn img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .profile {
+        width: 300px;
+    }
+    
+    .text-content {
+        font-size: 26px;
+    }
+
+    .user-photo img {
+        width: 50px;
+        margin-right: 10px;
+    }
+
+    .share {
+        width: 25px;
+        height: 25px;
+    }
+
+    .share img {
+        width: 13px;
+        height: 13px;
+    }
+
+    .text-topic {
+        font-size: 22px;
+        margin: 10px;
+    }
+
+    .buttons-account {
+        display: block;
+    }
+
+    .account-edit, .account-message {
+        width: 130px;
+        font-size: 12px;
+    }
+
+    .cooperation-form {
+        width: 260px;
+    }
+
+}
+
+@media screen and (max-width: 390px) {
+    .profile {
+        width: 280px;
+    }
+    
+    .text-topic {
+        margin: 5px;
+    }
+}
+
+
+@media screen and (max-width: 320px) {
+    .navbar-container {
+        padding: 0;
+    }
+
+    .navbar-right {
+        display: none;
+    }
+
+}
